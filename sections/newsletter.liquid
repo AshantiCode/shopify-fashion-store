@@ -1,0 +1,48 @@
+ <section class="call-to-action bg-gray section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="title">
+            <h2>{{ section.settings.title }}</h2>
+            <p>{{ section.settings.description }}</p>
+          </div>
+          <div class="col-lg-6 offset-3">
+            <div class="input-group subscription-form">
+              <input type="text" class="form-control" placeholder="Enter Your Email Address">
+              <span class="input-group-btn">
+                <button class="btn btn-main" type="button">{{section.settings.button_text }}</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	{% schema %}
+		{
+			"name": "Newsletter",
+			"settings": [
+					{
+						"type": "text",
+						"id": "title",
+						"label": "Section Heading",
+						"placeholder": "Subscribe to our newletter"
+					},
+					{
+						"type": "richtext",
+						"id": "description",
+						"label": "Description",
+						"default": "<p>Hello</p>"
+					},
+					{
+						"type": "text",
+						"id": "button_text",
+						"label": "Button Text",
+						"default": "Submit",
+						"info": "Add a Call to Action"
+					}
+			]
+		}
+	{% endschema %}
+	
