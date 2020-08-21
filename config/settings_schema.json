@@ -1,0 +1,83 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Awesome Fashion",
+    "theme_version": "1.0.0",
+    "theme_author": "Shanti Haring",
+    "theme_documentation_url": "https://github.com/Shopify/themekit",
+    "theme_support_url": "https://github.com/Shopify/themekit/issues"
+	},
+	{
+		"name" : "General",
+		"settings":[
+			{
+				"type": "header",
+				"content": "Logo Options"
+			},
+			{
+				"type": "color",
+				"id": "bg_color",
+				"label": "Background (example)",
+				"default": "#ffffff"
+			},
+			{
+				"type": "color",
+				"id": "text_color",
+				"label": "Text Color (example)",
+				"default": "#cccccc"
+			},
+			{
+				"type": "checkbox",
+				"id": "use_logo",
+				"label": "Use custom logo?"
+			},
+			{
+				"type": "image",
+				"id": "logo.png",
+				"label": "Custom Logo",
+				"max-width": 940,
+				"max-height": 300
+			},
+			{
+				"type": "paragraph",
+				"content": "Max logo dimensions are 940px wide by 300px high."
+			}
+
+		]
+	},
+	{
+		"name": "About Page",
+		"settings": [
+			{
+				"type": "image_picker",
+				"id": "about_img",
+				"label": "About Page Image"
+			}
+		]
+	},
+	{
+		"name": "Contact Page",
+		"settings": [
+			{
+				"type": "text",
+				"id": "address",
+				"label": "Address"
+			},
+			{
+				"type": "text",
+				"id": "phone",
+				"label": "Phone Number"
+			},
+			{
+				"type": "text",
+				"id": "fax",
+				"label": "Fax"
+			},
+			{
+				"type": "text",
+				"id": "email",
+				"label": "Email"
+			}
+		]
+	}
+]

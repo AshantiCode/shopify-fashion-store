@@ -1,0 +1,46 @@
+ <section class="top-header">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-md-4 col-xs-12 col-sm-4">
+ 				<div class="contact-number">
+ 					<i class="fa fa-phone"></i>
+ 					<span>0129- 12323-123123</span>
+ 				</div>
+ 			</div>
+
+ 			<div class="col-md-4 col-xs-12 col-sm-4">
+ 				<!-- Site Logo -->
+ 				<div class="logo text-center">
+ 					<a href="index.html">
+ 						<!-- replace logo here -->
+ 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="68" viewBox="0 0 360 68"><defs><filter id="a" x="0" y="0" width="360" height="68" filterUnits="userSpaceOnUse"><feOffset dy="13" input="SourceAlpha"/><feGaussianBlur stdDeviation="3" result="b"/><feFlood flood-opacity="0.161"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#a)"><text transform="translate(9)" fill="#196e40" font-size="35" font-family="LaoMN, Lao MN" letter-spacing="0.004em"><tspan x="0" y="31" xml:space="preserve">AWESOME  FASHION</tspan></text></g></svg>
+
+
+ 					</a>
+ 				</div>
+ 			</div>
+ 			<div class="col-md-4 col-xs-12 col-sm-4">
+ 				<ul class="top-menu list-inline float-right">
+ 					<li class="list-inline-item"><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+ 					<li class="list-inline-item"><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
+ 				</ul>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
+
+ {% include "menu" %}
+
+ {% schema %}
+	{
+		"name": "Main Menu",
+		"settings": [
+			{
+				"type": "link_list",
+				"id": "main_linklist",
+				"label": "Menu",
+				"default": "main-menu"
+			}
+		]
+	}
+ {% endschema %}
