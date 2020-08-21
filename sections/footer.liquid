@@ -1,0 +1,81 @@
+<footer class="footer section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="social-media">
+            <li>
+              <a href="">
+                <i class="fa fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="footer-menu">
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li>
+              <a href="">SHIPPING</a>
+            </li>
+            <li>
+              <a href="">TERMS OF SERVICE</a>
+            </li>
+            <li>
+              <a href="">PRIVACY POLICY</a>
+            </li>
+          </ul>
+          <p class="copyright-text">Copyright &#9400; Fashion</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+	{% schema %}
+		{
+			"name": "Footer",
+			"max_blocks": 6,
+			"blocks": [
+					{
+						"type": "text",
+						"name": "Add Social Media Links",
+						"settings": [
+							{
+								"id": "facebook",
+								"type": "text",
+								"label": "Facebook Link"
+							},
+							{
+								"id": "instagram",
+								"type": "text",
+								"label": "Instagram Link"
+							},
+							{
+								"id": "pinterest",
+								"type": "text",
+								"label": "Pinterest Link"
+							},
+							{
+								"id": "Twitter",
+								"type": "text",
+								"label": "Twitter Link"
+							}
+						]
+					}
+			]
+		}
+	{% endschema %}
+	
