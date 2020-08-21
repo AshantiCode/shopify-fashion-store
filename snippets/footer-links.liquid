@@ -1,16 +1,8 @@
-
 <ul class="footer-menu">
-	<li>
-		<a href="">Contact</a>
-	</li>
-	<li>
-		<a href="">SHIPPING</a>
-	</li>
-	<li>
-		<a href="">TERMS OF SERVICE</a>
-	</li>
-	<li>
-		<a href="">PRIVACY POLICY</a>
-	</li>
+	{% for block in section.blocks %}
+		<li>
+			<a href="{{ block.settings.footer_url }}">{{ block.settings.footer_text }}</a>
+		</li>
+	{% endfor %}
 </ul>
 <p class="copyright-text">Copyright &#9400; Fashion</p>
