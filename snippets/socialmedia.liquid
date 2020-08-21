@@ -6,7 +6,7 @@
 				
 					{% if section.settings.facebook != blank %}
 						<li>
-							<a href="{{ section.settings.facebook}}">
+							<a href="{{ section.settings.facebook}}" target="_blank" rel="nofollow">
 								<i class="fa fa-facebook-f"></i>
 							</a>
 						</li>
@@ -14,7 +14,7 @@
 						
 				{% if section.settings.instagram != blank %}
 					<li>
-						<a href="">
+						<a href="{{ section.settings.instagram}}" target="_blank" rel="nofollow">
 							<i class="fa fa-instagram"></i>
 						</a>
 					</li>
@@ -22,7 +22,7 @@
 				
 				{% if section.settings.twitter != blank %}
 				<li>
-					<a href="">
+					<a href="{{ section.settings.twitter}}" target="_blank" rel="nofollow">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
@@ -30,7 +30,7 @@
 				
 				{% if section.settings.pinterest != blank %}
 					<li>
-						<a href="">
+						<a href="{{ section.settings.pinterest}}" target="_blank" rel="nofollow">
 							<i class="fa fa-pinterest"></i>
 						</a>
 					</li>
