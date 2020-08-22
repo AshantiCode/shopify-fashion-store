@@ -7,25 +7,29 @@
 				</div>
 
 				<div id="accordion">
-					<div class="card">
-						<div class="card-header" id="headingOne">
-							<h5>
-								<a href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									Shirts
-								</a>
-							</h5>
-						</div>
-
-						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-							<div class="card-body">
-								<ul class="list-unstyled">
-									<li><a href="">T-Shirts</a></li>
-									<li><a href="">Polos</a></li>
-									<li><a href="">Longsleeve</a></li>
-								</ul>
+					{% for link in linklists[section.settings.category].links %}
+						{% if link.links != blank %}
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h5>
+										<a href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											 {{ link.title }}
+										</a>
+									</h5>
+								</div>
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+									<div class="card-body">
+										<ul class="list-unstyled">
+											{% for childlink in link.links %}
+												<li><a href="">{{ childlink.title }}</a></li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						{% endif %}
+					{% endfor %}
+					
 
 					<div class="card">
 						<div class="card-header" id="headingOne">
@@ -103,3 +107,17 @@
 		</div>
 	</div>
 </section>
+
+{% schema %}
+{
+	"name": "Collection Page",
+	"settings": 
+	[
+		{
+			"type": "link_list",
+			"id": "category",
+			"label": "Collection Dropdown"
+		}
+	]
+}
+{% endschema %}
