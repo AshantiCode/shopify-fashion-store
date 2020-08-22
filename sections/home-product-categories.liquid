@@ -8,82 +8,82 @@
         </div>
 
         <div class="col-md-6">
-				 {% for block in section.blocks %}
-				  	{% if forloop.index == 1 or forloop.index == 2 %}
-								<div class="category-box">
-									<a href="{{ block.settings.categort_url }}">
-										<img src="{{ block.settings.category_image | img_url: '540x' }}" alt="">
-										<div class="content">
-											<h3>{{ block.settings.category_heading }}</h3>
-											<p>{{ block.settings.category_subtitle}}</p>
-										</div>
-									</a>  
-								</div>
-						{% endif %}
-					{% endfor %}
+         {% for block in section.blocks %}
+            {% if forloop.index == 1 or forloop.index == 2 %}
+                <div class="category-box">
+                  <a href="{{ block.settings.categort_url }}">
+                    <img src="{{ block.settings.category_image | img_url: '540x' }}" alt="">
+                    <div class="content">
+                      <h3>{{ block.settings.category_heading }}</h3>
+                      <p>{{ block.settings.category_subtitle}}</p>
+                    </div>
+                  </a>  
+                </div>
+            {% endif %}
+          {% endfor %}
         </div>
 
         <div class="col-md-6">
-					{% for block in section.blocks %}
-						{% if forloop.index == 3 %}
-							<div class="category-box category-box-2">
-								<a href="{{ block.settings.category_url }}">
-									<img src="{{ block.settings.category_image | img_url: 'x600' }}" alt="">
-									<div class="content">
-										<h3>{{ block.settings.category_heading }}</h3>
-										<p>{{ block.settings.category_subtitle}}</p>
-									</div>
-								</a>  
-							</div>
-						{% endif %}
-					{% endfor %}
+          {% for block in section.blocks %}
+            {% if forloop.index == 3 %}
+              <div class="category-box category-box-2">
+                <a href="{{ block.settings.category_url }}">
+                  <img src="{{ block.settings.category_image | img_url: 'x600' }}" alt="">
+                  <div class="content">
+                    <h3>{{ block.settings.category_heading }}</h3>
+                    <p>{{ block.settings.category_subtitle}}</p>
+                  </div>
+                </a>  
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
   </section>
 
-	{% schema %}
-		{
-			"name": "Home Product Categories",
-			"settings": 
-			[
-				{
-					"type": "text",
-					"id": "title",
-					"label": "Section Heading",
-					"default": "Product Categories"
-				}
-			],
-			"max_blocks":3,
-			"blocks":
-			[
-				{
-					"type": "text",
-					"name": "Add Product Category",
-					"settings":
-					[
-						{
-						"id": "category_heading",
-						"type": "text",
-						"label": "Category Heading"
-						},
-						{
-						"id": "category_subtitle",
-						"type": "text",
-						"label": "Category Subtitle"
-						},
-						{
-						"id": "category_image",
-						"type": "image_picker",
-						"label": "Category Image"
-						},
-						{
-						"id": "category_url",
-						"type": "url",
-						"label": "Category Url"
-						}
-					]
-				 }
-			 ]
-		}
-	{% endschema %}
+  {% schema %}
+    {
+      "name": "Home Product Categories",
+      "settings": 
+      [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Heading",
+          "default": "Product Categories"
+        }
+      ],
+      "max_blocks":3,
+      "blocks":
+      [
+        {
+          "type": "text",
+          "name": "Add Product Category",
+          "settings":
+          [
+            {
+            "id": "category_heading",
+            "type": "text",
+            "label": "Category Heading"
+            },
+            {
+            "id": "category_subtitle",
+            "type": "text",
+            "label": "Category Subtitle"
+            },
+            {
+            "id": "category_image",
+            "type": "image_picker",
+            "label": "Category Image"
+            },
+            {
+            "id": "category_url",
+            "type": "url",
+            "label": "Category Url"
+            }
+          ]
+         }
+       ]
+    }
+  {% endschema %}
