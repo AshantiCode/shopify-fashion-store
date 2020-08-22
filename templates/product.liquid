@@ -1,3 +1,7 @@
+<script type="text/javascript">
+  window.product = {{product | json}} || {};
+</script>
+
 <section class="single-product">
   <div class="container">
     <div class="row">
@@ -10,7 +14,6 @@
         </nav>
       </div>
     </div>
-
     <div class="row pb-5">
       <div class="col-md-5">
         <div class="single-product-images">
@@ -21,16 +24,13 @@
         {% endfor %}
         </div>
       </div>
-
       <div class="col-md-7">
         <div class="single-product-details">
           <h2>{{product.title}}</h2>
           <p class="product-price">{{ product.price | money }}</p>
-          
           <p class="product-description">
             {{product.description}}
           </p>
-
           <form method="post" action="/cart/add" enctype="multipart/form-data" id="AddToCartForm">
 						<!-- if product has no other variants-->
 						{% if product.has_only_default_variant %}
@@ -38,39 +38,39 @@
 								<span>Quantity:</span>
 								<input min="1" type="number" id="quantity" name="quantity" value="1" />
 							</div>
-
 						{% else %}
+						<!--loop through product options and create select field with values (ie. Red)-->
 							{% for product_option in product.options_with_values %}
 								<div class="product-category">
 									<span>{{product_option.name}}</span>
-									<select class="form-control" data-index="option{{forloop.index}}">
+									<!-- Select & Options -->
+									<select name="id" id="productSelect" class="form-control" data-index="option{{forloop.index}}">
 										{% for value in product_option.values %}
 											<option value="{{ value | escape}}" {% if product_option.selected_value == value %} selected = "selected" {% endif %} > {{ value }}</option>
 										{% endfor %}
 									</select>
+									<div class="product-quantity">
+										<span>Quantity:</span>
+										<input min="1" type="number" id="quantity" name="quantity" value="1" />
+									</div>
 								</div>
 							{% endfor %}
 						{% endif %}
-           
-        
-          
-           
-						
             <div class="product-category">
               <span>Categories:</span>
               <ul>
                 {% for collection in product.collections %}
                 <li><a href="{{collection.url}}">{{collection.title}}</a></li>
                 {% endfor %}
-              
               </ul>
-            </div>
-            <a href="cart.html" class="btn btn-main">Add To Cart</a>
+						</div>
+						<!-- ADD TO Cart-->
+						<input type="hidden" id="variant-id" name="id" value={{product.variants.first.id}}>
+						<input type="submit" value='Add To Cart' class="btn btn-main">
           </form>
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-12">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -116,7 +116,7 @@
 </section>
 
 
-<!-- Default from blank template-->
+<!-- Default from blank templat for reference -->
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
