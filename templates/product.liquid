@@ -32,30 +32,30 @@
             {{product.description}}
           </p>
           <form method="post" action="/cart/add" enctype="multipart/form-data" id="AddToCartForm">
-						<!-- if product has no other variants-->
-						{% if product.has_only_default_variant %}
-							<div class="product-quantity">
-								<span>Quantity:</span>
-								<input min="1" type="number" id="quantity" name="quantity" value="1" />
-							</div>
-						{% else %}
-						<!--loop through product options and create select field with values (ie. Red)-->
-							{% for product_option in product.options_with_values %}
-								<div class="product-category">
-									<span>{{product_option.name}}</span>
-									<!-- Select & Options -->
-									<select name="id" id="productSelect" class="form-control" data-index="option{{forloop.index}}">
-										{% for value in product_option.values %}
-											<option value="{{ value | escape}}" {% if product_option.selected_value == value %} selected = "selected" {% endif %} > {{ value }}</option>
-										{% endfor %}
-									</select>
-									<div class="product-quantity">
-										<span>Quantity:</span>
-										<input min="1" type="number" id="quantity" name="quantity" value="1" />
-									</div>
-								</div>
-							{% endfor %}
-						{% endif %}
+            <!-- if product has no other variants-->
+            {% if product.has_only_default_variant %}
+              <div class="product-quantity">
+                <span>Quantity:</span>
+                <input min="1" type="number" id="quantity" name="quantity" value="1" />
+              </div>
+            {% else %}
+            <!--loop through product options and create select field with values (ie. Red)-->
+              {% for product_option in product.options_with_values %}
+                <div class="product-category">
+                  <span>{{product_option.name}}</span>
+                  <!-- Select & Options -->
+                  <select name="id" id="productSelect" class="form-control" data-index="option{{forloop.index}}">
+                    {% for value in product_option.values %}
+                      <option value="{{ value | escape}}" {% if product_option.selected_value == value %} selected = "selected" {% endif %} > {{ value }}</option>
+                    {% endfor %}
+                  </select>
+                  <div class="product-quantity">
+                    <span>Quantity:</span>
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" />
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
             <div class="product-category">
               <span>Categories:</span>
               <ul>
@@ -63,10 +63,10 @@
                 <li><a href="{{collection.url}}">{{collection.title}}</a></li>
                 {% endfor %}
               </ul>
-						</div>
-						<!-- ADD TO Cart-->
-						<input type="hidden" id="variant-id" name="id" value={{product.variants.first.id}}>
-						<input type="submit" value='Add To Cart' class="btn btn-main">
+            </div>
+            <!-- ADD TO Cart-->
+            <input type="hidden" id="variant-id" name="id" value={{product.variants.first.id}}>
+            <input type="submit" value='Add To Cart' class="btn btn-main">
           </form>
         </div>
       </div>
