@@ -59,7 +59,7 @@
                 <div class="preview-meta">
                   <ul>
                     <li>
-                      <a href="#"><i class="fa fa-search"></i></a>
+                      <a href="{{product.url | within: collection}}"><i class="fa fa-search"></i></a>
                     </li>
                     <li>
                       <a href=""><i class="fa fa-shopping-cart"></i></a>
@@ -68,7 +68,7 @@
                 </div>
               </div>
               <div class="product-content">
-                <h4><a href="{{ product.url }}">{{product.title}}</a></h4>
+                <h4><a href="{{ product.url | within: collection }}">{{product.title}}</a></h4>
                 <p class="price">{{product.price | money}}</p>
               </div>
             </div>
